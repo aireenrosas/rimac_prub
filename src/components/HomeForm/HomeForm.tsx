@@ -1,8 +1,61 @@
-import { useHomeForm } from "../../hooks/useHomeForm"; 
+import React from "react";
 import familyImg from "../../assets/images/family.jpg";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useUser } from "../../hooks/user";
+import type { FormValues } from "../../types/user";
 
 export default function HomeForm() {
-  const { register, handleSubmit, errors, onSubmit } = useHomeForm()
+  const { setUser } = useUser();
+  const [loading, setLoading] = React.useState(false);
+  const [errorApi, setErrorApi] = React.useState("");
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({
+    defaultValues: {
+      documentType: "DNI",
+      document: "",
+      phone: "",
+      privacy: false,
+      commercial: false,
+    },
+  });  
+
+  const fetchData = async (formData: FormValues) => {
+    try {
+      setLoading(true);
+      setErrorApi("");
+      const response = await fetch(
+        `https://rimac-front-end-challenge.netlify.app/api/user.json?dni=$${formData.document}`
+      );
+      const jsonResponse = await response.json();
+      setUser({
+        name: jsonResponse.name,
+        lastName: jsonResponse.lastName,
+        birthDay: jsonResponse.birthDay,
+        documentType: formData.documentType,
+        document: formData.document,
+        phone: formData.phone,
+        privacy: formData.privacy,
+        commercial: formData.commercial,
+        plan: null,
+      });
+      setLoading(false);
+      navigate("/plans");
+    } catch (err: any) {
+      setErrorApi(err.message || "Ocurrió un error con la API");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const onSubmit = (data: FormValues) => {
+    fetchData(data);
+  };
 
   return (
     <div className="home__right">
@@ -116,10 +169,16 @@ export default function HomeForm() {
           </div>
         </div>
 
-        {/* Botón de envío */}
+        {errorApi && (
+          <div className="alert alert-danger small">{errorApi}</div>
+        )}
         <div className="d-grid">
-          <button type="submit" className="btn btn-cotizar py-4 py-md-3 rounded-pill border border-5 border-dark">
-            Cotiza aquí
+          <button
+            type="submit"
+            disabled={loading}
+            className="btn btn-cotizar py-4 py-md-3 rounded-pill border border-5 border-dark"
+          >
+            {loading ? "Cargando..." : "Cotiza aquí"}
           </button>
         </div>
       </form>

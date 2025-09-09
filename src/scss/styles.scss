@@ -3,7 +3,7 @@
 @import "./bootswatch";
 
 body {
-  background: linear-gradient(50deg, $aqua100 0%, $aqua50 50%, $violeta 100%);  
+  background: linear-gradient(50deg, $aqua100 0%, $white 70%, $violeta 100%);  
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -141,6 +141,83 @@ body {
   display: block;
 }
 
+.btn-back {
+  color: $blue-berry;
+  border: none;
+  background: transparent;
+}
+
+.step-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+
+.step-circle.active {
+  background-color: $blue-berry;
+  color: $white;
+  border-color: $blue-berry;
+}
+
+.nav-tab {
+  background: $blue-light;
+  margin-top: 24px;
+}
+
+.option-card {
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+
+  &.selected {
+    border-color: #2563eb; // azul
+  }
+}
+
+.option-card {
+  border: 2px solid #e5e7eb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &.selected {
+    border-color: $black;
+    box-shadow: 0 0 0 4px $black;
+  }
+
+  .status-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.checked {
+      background-color: $green-new;
+      border-color: $green-new;
+
+      &::after {
+        content: "✔";
+        color: $white;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+
+    &.unchecked {
+      background-color: white;
+    }
+  }
+}
 
 @media (max-width: 768px) {
   .home__right {
