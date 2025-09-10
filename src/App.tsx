@@ -9,12 +9,16 @@ function App() {
   return (
     <UserProvider>
       <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/plans" element={<Plans />} />
-        </Routes>
-        <Footer />
+        <div className="app-wrapper">
+          <Header />
+          <main className="flex-grow-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/plans" element={<Plans />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>       
       </Router>
     </UserProvider>    
   )
