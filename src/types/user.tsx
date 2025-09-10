@@ -19,6 +19,7 @@ export interface FormValues {
 };
 
 export interface PlanValue {
+  id: number;
   name: string,
   price: number,
   description: string[],

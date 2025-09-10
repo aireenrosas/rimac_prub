@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useUser } from "../../hooks/user";
 import { useNavigate } from "react-router-dom";
+import PlansList from "../../components/PlansList/PlansList";
 
 
 export default function Plans() {
@@ -77,14 +78,18 @@ export default function Plans() {
           </svg>
           Volver
         </button>
-        <div className={`tab-content py-5 ${activeStep === 1 ? "d-flex justify-content-center align-items-center" : ""}`}>
+        <div
+          className={`tab-content py-5 ${
+            activeStep === 1 ? "d-flex flex-column justify-content-center align-items-center" : ""
+          }`}
+        >
           {activeStep === 1 && (
-            <div className="tab-pane active text-center">
+            <div className="tab-pane active text-center" style={{ maxWidth: "900px", width: "100%" }}>
               <h2>{user?.name}, ¿Para quién deseas cotizar?</h2>
               <span>Selecciona la opción que se ajuste más a tus necesidades.</span>
 
-              <div className="row row-cols-1 row-cols-md-2 mb-3 mt-4">
-                <div className="col d-flex justify-content-center align-items-center">
+              <div className="row row-cols-1 row-cols-md-2 mb-3 mt-4 justify-content-center">
+                <div className="col d-flex justify-content-md-end justify-content-center align-items-md-end align-items-center">
                   <div
                     className={`card plan-card rounded-3 shadow-sm option-card ${
                       selectedOption === "self" ? "selected" : ""
@@ -109,7 +114,7 @@ export default function Plans() {
                   </div>
                 </div>
 
-                <div className="col d-flex justify-content-center align-items-center">
+                <div className="col d-flex justify-content-md-start justify-content-center align-items-md-start align-items-center">
                   <div
                     className={`card plan-card rounded-3 shadow-sm option-card ${
                       selectedOption === "other" ? "selected" : ""
@@ -138,38 +143,42 @@ export default function Plans() {
 
               {selectedOption && (
                 <>
-                  <div className="row row-cols-1 row-cols-md-3 g-2 mt-4 d-flex justify-content-center">
-                    {planes.map((plan:any) => 
-                      <div className="col" key={plan.id}>
-                        <div className="card list-plans mb-2 rounded-3 shadow-sm">
-                          <div className="card-header py-3">
-                            <h1 className="card-title pricing-card-title my-0 fw-bold">
-                              {plan.name}
-                            </h1>
-                            <p>COSTO DEL PLAN</p>
-                            <br />
-                            <span>${plan.price} al mes</span>
+                  <div className="d-none d-md-block">
+                    <div className="row row-cols-1 row-cols-md-3 g-2 mt-4 justify-content-center">
+                        {planes.map((plan:any) => 
+                          <div className="col d-flex" key={plan.id}>
+                            <div className="card list-plans mb-2 rounded-3 shadow-sm h-100 w-100 d-flex flex-column">
+                              <div className="card-header py-3">
+                                <h1 className="card-title pricing-card-title my-0 fw-bold">
+                                  {plan.name}
+                                </h1>
+                                <span>COSTO DEL PLAN</span>
+                                <br />
+                                <span>${plan.price} al mes</span>
+                              </div>
+                              <div className="card-body d-flex flex-column">
+                                <ul className="list-unstyled mt-3 mb-4 text-start flex-grow-1">
+                                  {plan.description.map((desc: string, i: number) => (
+                                    <li key={i}>{desc}</li>
+                                  ))}
+                                </ul>
+                                <button 
+                                  onClick={() => handleButton(plan)}  
+                                  type="button" 
+                                  className="w-100 btn btn-lg btn-primary"
+                                >
+                                  Seleccionar Plan
+                                </button>
+                              </div>
+                            </div>
                           </div>
-                          <div className="card-body">
-                            <ul className="list-unstyled mt-3 mb-4 text-start">
-                              {plan.description.map((desc: string, i: number) => (
-                                <li key={i}>{desc}</li>
-                              ))}
-                            </ul>
-                            <button 
-                              onClick={() => handleButton(plan)}  
-                              type="button" 
-                              className="w-100 btn btn-lg btn-primary"
-                            >
-                              Seleccionar Plan
-                            </button>
-                          </div>
-                        </div>
+                        )}                
                       </div>
-                    )}                
-                  </div>
-                </>
-                
+                    </div>
+                  <div className="d-md-none">
+                    <PlansList planes={planes} handleButton={handleButton} />
+                  </div> 
+                </>                
               )}
             </div>
           )}
