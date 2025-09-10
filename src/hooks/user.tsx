@@ -15,7 +15,7 @@ export function useUser() {
 }
 
 export function UserProvider(props: { children: React.ReactNode }) {
-  const [user, setUser] = React.useState({
+  const [user, setUser] = React.useState<User>({
     name: "",
     lastName: "",
     birthDay: "",    

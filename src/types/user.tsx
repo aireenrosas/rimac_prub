@@ -1,3 +1,12 @@
+export interface PlanValue {
+  id: number;
+  name: string;
+  price: number;
+  description: string[];
+  age: number;
+  recomendado?: boolean;
+}
+
 export interface User {
   name: string;
   lastName: string;
@@ -18,10 +27,3 @@ export interface FormValues {
   commercial: boolean;
 };
 
-export interface PlanValue {
-  id: number;
-  name: string,
-  price: number,
-  description: string[],
-  age: number 
-}
