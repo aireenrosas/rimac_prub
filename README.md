@@ -4,6 +4,46 @@ Este proyecto es una aplicación **frontend** desarrollada con **React + TypeScr
 Su objetivo es construir una página de **login** y **planes de seguros** con diseño **responsivo** y buenas prácticas de desarrollo.
 
 ---
+# 🌟 Solución del Proyecto
+
+La solución propuesta consiste en el desarrollo de una aplicación **frontend** que simula el flujo de contratación digital de un seguro, compuesta por **login**, **selección de planes** y **resumen final**, con un diseño totalmente **responsivo** y basado en buenas prácticas de desarrollo moderno.  
+
+---
+
+## 🎯 Objetivos de la solución
+- Implementar una aplicación **frontend** que simule el proceso de **login, selección de planes y resumen final**.  
+- Garantizar una **experiencia de usuario sencilla, clara y responsiva**, adaptable a móviles, tablets y desktops.  
+- Aplicar buenas prácticas de desarrollo con **React + TypeScript**, asegurando mantenibilidad y escalabilidad del código.  
+- Integrar **Firebase** para autenticación y despliegue en la nube.  
+
+---
+
+## 📌 Justificación
+En un contexto donde la **experiencia digital** es fundamental, esta aplicación busca reproducir un flujo común en sistemas de seguros y servicios financieros:  
+
+➡️ **Autenticación → Personalización → Confirmación**  
+
+- El uso de **SCSS** permite definir un diseño adaptable y visualmente atractivo.  
+- La arquitectura basada en **componentes de React** garantiza **reutilización, modularidad y legibilidad** en el código.  
+
+---
+
+## 🖥️ Alcance de la aplicación
+- **🏠 Vista Home/Login** → Permite el ingreso de usuarios registrados.  
+- **📑 Selección de planes** → Muestra distintas opciones y beneficios de seguros.  
+- **📋 Resumen final** → El usuario revisa y confirma su elección.  
+- **📱 Diseño responsive** → Interfaz accesible desde móviles, tablets y escritorios.  
+
+---
+
+## 🚀 Conclusión
+El proyecto demuestra cómo el uso de **tecnologías modernas** (React, TypeScript, SCSS y Firebase) permite construir aplicaciones web:  
+- Rápidas ⚡  
+- Seguras 🔐  
+- Responsivas 📱  
+- Con un flujo realista orientado al sector de **seguros digitales**.  
+
+---
 
 ## 🛠️ Tecnologías utilizadas
 - ⚛️ [React](https://react.dev/) + [Vite](https://vitejs.dev/) → Framework y bundler de alto rendimiento.  
