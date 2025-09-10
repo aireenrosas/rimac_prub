@@ -15,7 +15,7 @@ Su objetivo es construir una página de **login** y **planes de seguros** con di
 ---
 
 ## 📂 Estructura del proyecto
-
+```bash
 ├── public/            # Archivos estáticos (imágenes globales, favicon, etc.)
 ├── src/               # Código fuente principal
 │   ├── assets/        # Recursos como imágenes, íconos, fuentes
@@ -26,6 +26,7 @@ Su objetivo es construir una página de **login** y **planes de seguros** con di
 ├── firebase.json      # Configuración de Firebase
 ├── vite.config.ts     # Configuración de Vite
 └── package.json       # Dependencias y scripts
+```
 
 
 ---
