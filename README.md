@@ -29,19 +29,10 @@ En un contexto donde la **experiencia digital** es fundamental, esta aplicación
 ---
 
 ## Alcance de la aplicación
-- ** Vista Home/Login** → Permite el ingreso de usuarios registrados.  
-- ** Selección de planes** → Muestra distintas opciones y beneficios de seguros.  
-- ** Resumen final** → El usuario revisa y confirma su elección.  
-- ** Diseño responsive** → Interfaz accesible desde móviles, tablets y escritorios.  
-
----
-
-## Conclusión
-El proyecto demuestra cómo el uso de **tecnologías modernas** (React, TypeScript, SCSS y Firebase) permite construir aplicaciones web:  
-- Rápidas   
-- Seguras   
-- Responsivas   
-- Con un flujo realista orientado al sector de **seguros digitales**.  
+- Vista Home/Login → Permite el ingreso de usuarios registrados.  
+- Selección de planes → Muestra distintas opciones y beneficios de seguros.  
+- Resumen final → El usuario revisa y confirma su elección.  
+- Diseño responsive → Interfaz accesible desde móviles, tablets y escritorios.  
 
 ---
 
