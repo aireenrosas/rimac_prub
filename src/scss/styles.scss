@@ -13,9 +13,9 @@ main {
 }
 
 .header {
-  background: transparent;
+  background: $white;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 11;
   
@@ -73,7 +73,6 @@ main {
   width: 100%;
   height: 100%;
   background: radial-gradient(ellipse 50% 150% at left 85%, #C333FF 0%, transparent 40%);
-  /* transform: rotate(20deg); */
   pointer-events: none;
 }
 
@@ -85,7 +84,6 @@ main {
   width: 100%;
   height: 100%;
   background: radial-gradient(ellipse 50% 120% at right 30%, #00F4E2 0%, transparent 50%);
-  /* transform: rotate(28deg); */
   pointer-events: none;
 }
 

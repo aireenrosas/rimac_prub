@@ -37,7 +37,7 @@ export default function Plans() {
   }
 
   return (
-    <div className="py-5">
+    <section>
       <div className="d-flex d-md-none align-items-center gap-2 pt-2 px-3 mb-3">
         <button 
           onClick={() => {
@@ -240,6 +240,6 @@ export default function Plans() {
           )}
         </div>
       </div>
-    </div>    
+    </section>    
   );
 }
