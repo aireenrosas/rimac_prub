@@ -92,7 +92,7 @@ export default function HomeForm() {
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
         <div className="mb-3">
-          <div className="input-group input-group-lg rounded">
+          <div className="input-group rounded">
             <select
               {...register("documentType")}
               className="document-type form-select border-end-0 rounded-start bg-white border border-dark"
